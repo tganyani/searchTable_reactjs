@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import {useReducer} from 'react'
+import Table from './components/table'
+import reducer from './reducers/axiosReducer'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import dataStateContext from './context/dataContext'
+
+const initialState = {
+	data: [],
+	isLoading:true,
+	error:""
+}
+function App(){
+	const [state,dispatch] = useReducer(reducer,initialState)
+	return(
+		<div className="App">
+			<dataStateContext.Provider value={{state ,dispatch}}>
+				<Table/>
+				<div style={{height:"30px",backgroundColor:"blue",width:"100%",
+				width:"95%",marginLeft:"25px"}}>
+				</div>
+			</dataStateContext.Provider>
+		</div>
+		)
 }
 
-export default App;
+
+export default App
