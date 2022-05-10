@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": " https://github.com/tganyani/searchTable_mysql_node_express_reactjs.git",
+  "homepage": "https://github.com/tganyani/searchTable_reactjs.git",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
